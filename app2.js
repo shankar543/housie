@@ -101,8 +101,9 @@ function start(){
             }
     }
     fillnumbers();
-    //addTable();
-    setTimeout(addTable,10);
+    setTimeout(addTable, 10);
+    document.querySelector(".closebtn").innerText="open"
+        disaplayAll.style.display="none";   
 }
 
 
@@ -141,15 +142,17 @@ if(currentnum){
 }
 }
 start();
-var timerstart=setInterval(display,4000)
+
 function stopInterval(){
     if(timerstart){
         timerstart = clearInterval(timerstart);
     }
 }
-function startInterval(){
+var timerstart = null;
+function startInterval() {
+
     if(!timerstart){
-        timerstart=setInterval(display,4000)
+        timerstart=setInterval(display,2000)
     }
     
 }
@@ -224,7 +227,8 @@ return tab;
 
 }
 
-    function fillTable(){
+function fillTable() {
+        
         createTable();
         let tab = createDisplayTable()//person.table[0] || new tableclass();
         var tabletop = document.createElement("tr");
